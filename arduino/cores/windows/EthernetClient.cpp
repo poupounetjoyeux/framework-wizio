@@ -30,13 +30,11 @@
 EthernetClient::EthernetClient() : _sock(-1)
 {
 	connect_true = false;
-	_pCloseServer = NULL;
 }
 
 EthernetClient::EthernetClient(uint8_t sock) : _sock(sock)
 {
 	connect_true = true;
-	_pCloseServer = NULL;
 }
 
 static int _connect(int sock, struct sockaddr_in *psin, unsigned int len, uint32_t timeout)
@@ -227,11 +225,6 @@ void EthernetClient::stop()
 	connect_true = false;
 	close(_sock);
 	_sock = -1;
-	if (_pCloseServer != NULL)
-	{
-		//TODO
-		//_pCloseServer->closeNotify(this->id);
-	}
 }
 
 uint8_t EthernetClient::connected()

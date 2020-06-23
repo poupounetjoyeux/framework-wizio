@@ -1,7 +1,7 @@
 {
     "name": "framework-wizio",
     "description": "WizIO Frameworks for PlatformIO",
-    "url": "https://github.com/Wiz-IO/framework-wizio",
+    "url": "https://github.com/poupounetjoyeux/framework-wizio.git",
     "system": "*",
     "version": "1.0.0"
 }
