@@ -9,8 +9,6 @@ June 2019
 */
 
 
-#include <commctrl.h>
-
 #pragma once
 void setTextAlignment(HWND hwnd, int textalignment);
 #define REPORTERROR ReportError(__FUNCTION__)
