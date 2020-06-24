@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifdef WIN_EMU
@@ -68,7 +68,7 @@ void createDisplay()
 {
     hOled = CreateWindow("static", "OLED DISPLAY",
                          WS_CHILD | WS_VISIBLE | WS_TABSTOP,
-                         10, 58, 128 * PYXEL_SIZE, 64 * PYXEL_SIZE,
+                         10, 88, 128 * PYXEL_SIZE, 64 * PYXEL_SIZE,
                          hWndMain,
                          NULL,
                          (HINSTANCE)GetWindowLong(hWndMain, GWL_HINSTANCE),

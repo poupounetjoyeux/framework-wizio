@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifdef WIN_EMU
@@ -99,7 +99,7 @@ LRESULT CALLBACK WndProc(HWND h, UINT msg, WPARAM wParam, LPARAM lParam)
     case WM_KEYUP:
         extern void keyUp(WPARAM wParam);
         keyUp(wParam);
-        break;        
+        break;
 
     case WM_CLOSE:
         startedArduino = 0;
@@ -162,6 +162,10 @@ int main()
 
     extern void create_leds();
     create_leds();
+
+
+    extern void create_analogs();
+    create_analogs();
 
     extern void createDisplay();
     createDisplay();

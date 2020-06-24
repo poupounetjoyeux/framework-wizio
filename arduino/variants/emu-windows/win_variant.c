@@ -68,6 +68,14 @@ void led_mode(int pin, int mode)
     InvalidateRect(leds[pin].h, NULL, TRUE);
 }
 
+int get_analog_by_handle(HWND h)
+{
+    for (int i = 0; i < MAX_ANALOG; i++)
+        if (analogs[i].h == h)
+            return i;
+    return -1;
+}
+
 void ana_set(int pin, int val)
 {
   if (pin >= MAX_ANALOG)

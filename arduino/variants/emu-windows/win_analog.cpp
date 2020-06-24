@@ -67,31 +67,30 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-int createAna(int n)
+int createAnalog(int n)
 {
     char txt[16];
-    sprintf(txt, "LED%d", n);
-    leds[n].h = CreateWindow("static", txt,
+    sprintf(txt, "A%d", n);
+    analogs[n].h = CreateWindow("static", txt,
                              WS_CHILD | WS_VISIBLE | WS_TABSTOP,
                              10 + n * 36, // x
-                             10,          // y
+                             49,          // y
                              34,          // width
                              34,          // height
                              hWndMain,
                              NULL,
                              (HINSTANCE)GetWindowLong(hWndMain, GWL_HINSTANCE),
                              NULL);
-    if (!leds[n].h)
+    if (!analogs[n].h)
         return (0);
-    leds[n].proc = (WNDPROC)SetWindowLong(leds[n].h, GWL_WNDPROC, (DWORD)LedProc);
-    leds[n].color = RGB(0, 255, 255);
-    leds[n].state = 0;
+    analogs[n].proc = (WNDPROC)SetWindowLong(analogs[n].h, GWL_WNDPROC, (DWORD)AnaProc);
+    analogs[n].value = 0;
 }
 
-void create_leds()
+void create_analogs()
 {
-    for (int i = 0; i < MAX_LEDS; i++)
-        createLed(i);
+    for (int i = 0; i < MAX_ANALOG; i++)
+        createAnalog(i);
 }
 
 #endif /* WIN_EMU */
