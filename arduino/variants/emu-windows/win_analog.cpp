@@ -25,6 +25,7 @@
 #include <variant.h>
 
 #include <commctrl.h>
+#include "InputBox/SG_InputBox.h"
 
 extern HWND hWndMain;
 
@@ -43,20 +44,11 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     switch (M)
     {
     case WM_LBUTTONUP:
-    hDC = BeginPaint(H, &ps);
-    brush = CreateSolidBrush(RGB(255,255,0));
-    SelectObject((HDC)wParam, brush);
-    GetClientRect(H, &rect);
-    Rectangle((HDC)wParam, rect.left, rect.top, rect.right, rect.bottom);
-    //FillRect(hDC, &ps.rcPaint, brush);
-
-    SetBkMode(hDC, TRANSPARENT);
-    snprintf(caption, sizeof(caption), "A%u", n);
-    DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
-
-    DeleteObject(brush);
-    EndPaint(H, &ps);
-      break;
+      LPWSTR result = SG_InputBox::GetString(
+       L"Code Project Demo - by Michael Haephrati",
+       L"What is your name",
+       L"My name is Michael");
+    return 0;
     case WM_PAINT:
         return 0;
 
@@ -108,6 +100,14 @@ void create_analogs()
 {
     for (int i = 0; i < MAX_ANALOG; i++)
         createAnalog(i);
+}
+
+void popUpValue()
+{
+  hWndMain = CreateWindowEx(WS_EX_CLIENTEDGE, g_szClassName,
+      "Enter value",
+      WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT, 640, 500,
+      NULL, NULL, hInstance, NULL);
 }
 
 #endif /* WIN_EMU */
