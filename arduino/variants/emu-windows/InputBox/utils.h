@@ -7,8 +7,7 @@ haephrati@gmail.com
 June 2019
 �2019 Michael Haephrati and Secured Globe, Inc. 1501 Broadway Ave. STE 1200, New York 10036, NY
 */
-
-#include <commctrl.h>
+#include <windows.h>
 
 #pragma once
 void setTextAlignment(HWND hwnd, int textalignment);
