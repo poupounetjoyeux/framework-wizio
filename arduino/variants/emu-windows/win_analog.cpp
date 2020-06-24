@@ -102,12 +102,4 @@ void create_analogs()
         createAnalog(i);
 }
 
-void popUpValue()
-{
-  hWndMain = CreateWindowEx(WS_EX_CLIENTEDGE, g_szClassName,
-      "Enter value",
-      WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT, 640, 500,
-      NULL, NULL, hInstance, NULL);
-}
-
 #endif /* WIN_EMU */
