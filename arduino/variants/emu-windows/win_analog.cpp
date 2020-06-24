@@ -51,7 +51,6 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     //FillRect(hDC, &ps.rcPaint, brush);
 
     SetBkMode(hDC, TRANSPARENT);
-    int n = get_analog_by_handle(H);
     snprintf(caption, sizeof(caption), "A%u", n);
     DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 
@@ -71,7 +70,6 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
         //FillRect(hDC, &ps.rcPaint, brush);
 
         SetBkMode(hDC, TRANSPARENT);
-        int n = get_analog_by_handle(H);
         snprintf(caption, sizeof(caption), "A%u", n);
         DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 
