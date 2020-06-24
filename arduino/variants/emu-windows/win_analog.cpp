@@ -44,6 +44,7 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     switch (M)
     {
     case WM_LBUTTONUP:
+    {
       BOOL bSuccess;
       int newValue=GetDlgItemInt(hEditValue,0,&bSuccess,true);
       if(bSuccess)
@@ -51,10 +52,12 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
         analogs[n].value = newValue;
       }
       return 0;
+    }
     case WM_PAINT:
         return 0;
 
     case WM_ERASEBKGND:
+    {
         //emu_print("WM_ERASEBKGND\r\n");
         hDC = BeginPaint(H, &ps);
         brush = CreateSolidBrush(RGB(255,255,255));
@@ -64,13 +67,14 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
         //FillRect(hDC, &ps.rcPaint, brush);
 
         SetBkMode(hDC, TRANSPARENT);
+        int n = get_analog_by_handle(H);
         snprintf(caption, sizeof(caption), "A%u", n);
         DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 
         DeleteObject(brush);
         EndPaint(H, &ps);
         return 0;
-
+        }
     } //switch
     return 0;
 }
