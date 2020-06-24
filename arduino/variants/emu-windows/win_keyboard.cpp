@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifdef WIN_EMU
@@ -36,7 +36,7 @@ void keyDown(WPARAM wParam)
     //WM_KEYDOWN:
     switch (wParam)
     {
-    case VK_ESC:
+    case VK_ESCAPE:
       leds[0].state = 1;
       break;
     case VK_F1:
@@ -85,7 +85,7 @@ void keyUp(WPARAM wParam)
     //WM_KEYUP:
     switch (wParam)
     {
-      case VK_ESC:
+      case VK_ESCAPE:
       leds[0].state = 0;
       break;
       case VK_F1:
