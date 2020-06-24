@@ -140,37 +140,25 @@ void keyUp(WPARAM wParam)
           break;
 
     case VK_A:
-        {
-          if(bSuccess)
-          {
-            analogs[0].value = newValue;
-          }
-          break;
-        }
-    case VK_A:
-        {
-          if(bSuccess)
-          {
-            analogs[0].value = newValue;
-          }
-          break;
-        }
-    case VK_A:
-        {
-          if(bSuccess)
-          {
-            analogs[0].value = newValue;
-          }
-          break;
-        }
-    case VK_A:
-        {
-          if(bSuccess)
-          {
-            analogs[0].value = newValue;
-          }
-          break;
-        }
+      if(bSuccess)
+        analogs[0].value = newValue;
+      break;
+    case VK_Z:
+      if(bSuccess)
+        analogs[1].value = newValue;
+      break;
+    case VK_E:
+      if(bSuccess)
+        analogs[2].value = newValue;
+      break;
+    case VK_R:
+      if(bSuccess)
+        analogs[3].value = newValue;
+      break;
+    case VK_T:
+      if(bSuccess)
+        analogs[4].value = newValue;
+      break;
     default:
         break;
     }
