@@ -139,23 +139,23 @@ void keyUp(WPARAM wParam)
           leds[12].state = 0;
           break;
 
-    case VK_A:
+    case 0x41:
       if(bSuccess)
         analogs[0].value = newValue;
       break;
-    case VK_Z:
+    case 0x5A:
       if(bSuccess)
         analogs[1].value = newValue;
       break;
-    case VK_E:
+    case 0x45:
       if(bSuccess)
         analogs[2].value = newValue;
       break;
-    case VK_R:
+    case 0x52:
       if(bSuccess)
         analogs[3].value = newValue;
       break;
-    case VK_T:
+    case 0x54:
       if(bSuccess)
         analogs[4].value = newValue;
       break;
