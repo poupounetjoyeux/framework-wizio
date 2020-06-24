@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifdef WIN_EMU
@@ -66,6 +66,22 @@ void led_mode(int pin, int mode)
     else
         leds[pin].color = RGB(255, 0, 0);
     InvalidateRect(leds[pin].h, NULL, TRUE);
+}
+
+void ana_set(int pin, int val)
+{
+  if (pin >= MAX_ANALOG)
+      return;
+  if (val)
+    analogs[pin].value = val;
+  InvalidateRect(analogs[pin].h, NULL, TRUE);
+}
+
+int ana_get(int pin)
+{
+  if (pin >= MAX_ANALOG)
+      return -1;
+  return analogs[pin].value;
 }
 
 #endif /* WIN_EMU */

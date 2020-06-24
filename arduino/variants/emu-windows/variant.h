@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifndef __VARIANT_H__
@@ -29,8 +29,8 @@ extern "C"
 {
 #endif
 
-#define LED 0                 
-#define LED_BUILTIN 0         
+#define LED 0
+#define LED_BUILTIN 0
 
 
 #ifdef WIN_EMU
@@ -47,6 +47,15 @@ typedef struct
     int state;
 } LED_T;
 extern LED_T leds[MAX_LEDS];
+
+#define MAX_ANALOG 5
+typedef struct
+{
+    HWND h;
+    WNDPROC proc;
+    int value;
+} ANA_T;
+extern ANA_T analogs[MAX_ANALOG];
 
 int get_led_by_handle(HWND h);
 int led_get(uint8_t pin);
