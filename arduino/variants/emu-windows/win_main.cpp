@@ -144,7 +144,7 @@ int main()
     // Creating the Window
     hWndMain = CreateWindowEx(WS_EX_CLIENTEDGE, g_szClassName,
         "Arduino Simulator 2019 WizIO",
-        WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT, 640, 480,
+        WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT, 640, 500,
         NULL, NULL, hInstance, NULL);
     if (hWndMain == NULL)
     {
