@@ -48,6 +48,11 @@ typedef struct
 } LED_T;
 extern LED_T leds[MAX_LEDS];
 
+int get_led_by_handle(HWND h);
+int led_get(uint8_t pin);
+void led_set(int pin, int val);
+void led_mode(int pin, int mode);
+
 #define MAX_ANALOG 5
 typedef struct
 {
@@ -57,10 +62,9 @@ typedef struct
 } ANA_T;
 extern ANA_T analogs[MAX_ANALOG];
 
-int get_led_by_handle(HWND h);
-int led_get(uint8_t pin);
-void led_set(int pin, int val);
-void led_mode(int pin, int mode);
+int get_analog_by_handle(HWND h);
+int ana_get(uint8_t pin);
+void ana_set(int pin, int val);
 
 #endif /* WIN_EMU */
 
