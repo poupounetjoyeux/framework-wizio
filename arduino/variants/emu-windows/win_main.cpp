@@ -156,7 +156,7 @@ int main()
     // Creating the Edit
     hEdit = CreateWindowEx(WS_EX_CLIENTEDGE, "EDIT", "",
                            WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_MULTILINE | ES_AUTOVSCROLL, // | ES_AUTOHSCROLL,
-                           0, 200, 620, 240,
+                           0, 221, 620, 240,
                            hWndMain, (HMENU)0, GetModuleHandle(NULL), NULL);
     SendMessage(hEdit, WM_SETFONT, (WPARAM)hFont, MAKELPARAM(true, 0));
 
