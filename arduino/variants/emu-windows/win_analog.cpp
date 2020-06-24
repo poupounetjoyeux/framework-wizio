@@ -43,12 +43,20 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     switch (M)
     {
     case WM_LBUTTONUP:
-      int value = QInputDialog::getInt(
-              "MyApp 3000", "Enter your value:", QLineEdit::Normal, 0, -9999, 1000000, 1,
-              QString::null, &ok, this );
-      if (ok) {
-          n.value = value;
-      }
+    hDC = BeginPaint(H, &ps);
+    brush = CreateSolidBrush(RGB(255,255,0));
+    SelectObject((HDC)wParam, brush);
+    GetClientRect(H, &rect);
+    Rectangle((HDC)wParam, rect.left, rect.top, rect.right, rect.bottom);
+    //FillRect(hDC, &ps.rcPaint, brush);
+
+    SetBkMode(hDC, TRANSPARENT);
+    int n = get_analog_by_handle(H);
+    snprintf(caption, sizeof(caption), "A%u", n);
+    DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+
+    DeleteObject(brush);
+    EndPaint(H, &ps);
       break;
     case WM_PAINT:
         return 0;
