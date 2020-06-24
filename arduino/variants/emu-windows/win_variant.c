@@ -49,8 +49,6 @@ void led_set(int pin, int val)
 {
     if (pin >= MAX_LEDS)
         return;
-    if (leds[pin].mode <= INPUT_PULLDOWN)
-        return; // is input
     leds[pin].color = RGB(255, 0, 0);
     if (val)
         leds[pin].color = RGB(0, 255, 0);
