@@ -42,6 +42,14 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     PAINTSTRUCT ps = {0};
     switch (M)
     {
+    case WM_LBUTTONUP:
+      int value = QInputDialog::getInt(
+              "MyApp 3000", "Enter your value:", QLineEdit::Normal, 0, -9999, 1000000, 1,
+              QString::null, &ok, this );
+      if (ok) {
+          n.value = value;
+      }
+      break;
     case WM_PAINT:
         return 0;
 
@@ -81,6 +89,9 @@ int createAnalog(int n)
                              NULL,
                              (HINSTANCE)GetWindowLong(hWndMain, GWL_HINSTANCE),
                              NULL);
+
+                             bool ok;
+
     if (!analogs[n].h)
         return (0);
     analogs[n].proc = (WNDPROC)SetWindowLong(analogs[n].h, GWL_WNDPROC, (DWORD)AnaProc);
