@@ -76,16 +76,6 @@ void keyDown(WPARAM wParam)
     case VK_F12:
         leds[12].state = 1;
         break;
-
-    case VK_A:
-        {
-          if(bSuccess)
-          {
-            analogs[0].value = newValue;
-          }
-          break;
-        }
-
     default:
         break;
     }
