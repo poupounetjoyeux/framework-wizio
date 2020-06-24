@@ -85,7 +85,7 @@ void ana_set(int pin, int val)
   InvalidateRect(analogs[pin].h, NULL, TRUE);
 }
 
-int ana_get(int pin)
+int ana_get(uint8_t pin)
 {
   if (pin >= MAX_ANALOG)
       return -1;
