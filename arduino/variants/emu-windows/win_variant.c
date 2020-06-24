@@ -50,8 +50,10 @@ void led_set(int pin, int val)
     if (pin >= MAX_LEDS)
         return;
     leds[pin].color = RGB(255, 0, 0);
-    if (val)
+    if (val && leds[pin].mode <= INPUT_PULLDOWN)
         leds[pin].color = RGB(0, 255, 0);
+    else
+        leds[pin].color = RGB(255, 125, 0);
     leds[pin].state = val;
     InvalidateRect(leds[pin].h, NULL, TRUE);
 }
