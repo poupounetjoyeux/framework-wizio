@@ -2,7 +2,7 @@
     Created on: 01.01.2019
     Author: Georgi Angelov
         http://www.wizio.eu/
-        https://github.com/Wiz-IO    
+        https://github.com/Wiz-IO
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,7 +16,7 @@
 
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA   
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #ifdef WIN_EMU
@@ -46,6 +46,7 @@ LRESULT CALLBACK LedProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
         return 0;
 
     case WM_ERASEBKGND:
+    {
         //emu_print("WM_ERASEBKGND\r\n");
         hDC = BeginPaint(H, &ps);
         brush = CreateSolidBrush(leds[n].color);
@@ -56,13 +57,20 @@ LRESULT CALLBACK LedProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
 
         SetBkMode(hDC, TRANSPARENT);
         int n = get_led_by_handle(H);
-        snprintf(caption, sizeof(caption), "%u", n);
+        if(leds[n].mode<=INPUT_PULLDOWN)
+        {
+          snprintf(caption, sizeof(caption), "%u:%u", n, leds[n].state);
+        }
+        else
+        {
+          snprintf(caption, sizeof(caption), "%u", n);
+        }
         DrawText(hDC, caption, -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 
         DeleteObject(brush);
         EndPaint(H, &ps);
         return 0;
-
+      }
     } //switch
     return 0;
 }
