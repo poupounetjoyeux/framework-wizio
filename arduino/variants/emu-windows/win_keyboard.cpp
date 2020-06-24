@@ -84,7 +84,7 @@ void keyDown(WPARAM wParam)
 void keyUp(WPARAM wParam)
 {
   BOOL bSuccess;
-  int newValue=GetDlgItemInt(hEditValue,0,&bSuccess,true);
+  int newValue=GetDlgItemInt(hWndMain,IDC_NUMBER,&bSuccess,true);
 
     //WM_KEYUP:
     switch (wParam)
