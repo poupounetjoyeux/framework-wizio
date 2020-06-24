@@ -27,6 +27,7 @@
 #include <commctrl.h>
 
 extern HWND hWndMain;
+extern HWND hEditValue;
 
 LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
 {
@@ -42,6 +43,14 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     PAINTSTRUCT ps = {0};
     switch (M)
     {
+    case WM_LBUTTONUP:
+      BOOL bSuccess;
+      int newValue=GetDlgItemInt(hEditValue,IDC_NUM_EDIT,&bSuccess,true);
+      if(bSuccess)
+      {
+        n.value = newValue;
+      }
+      return 0;
     case WM_PAINT:
         return 0;
 

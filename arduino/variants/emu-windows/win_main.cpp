@@ -35,7 +35,6 @@ extern void loop();
 const char g_szClassName[] = "myArduinoWindowClass";
 HINSTANCE hInstance;
 HWND hEdit = 0;
-HWND hEditValue = 0;
 HFONT hFont;
 
 void emu_print(LPCTSTR newText)
@@ -163,7 +162,7 @@ int main()
 
     hEditValue = CreateWindowEx(WS_EX_CLIENTEDGE, "EDIT", "",
                            WS_CHILD | WS_VISIBLE | ES_NUMBER, // | ES_AUTOHSCROLL,
-                           195, 49, 435, 34,
+                           195, 49, 150, 34,
                            hWndMain, (HMENU)0, GetModuleHandle(NULL), NULL);
     SendMessage(hEditValue, WM_SETFONT, (WPARAM)hFont, MAKELPARAM(true, 0));
 

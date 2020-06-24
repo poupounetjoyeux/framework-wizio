@@ -36,6 +36,7 @@ extern "C"
 #ifdef WIN_EMU
 
 extern HWND hWndMain;
+extern HWND hEditValue;
 
 #define MAX_LEDS 16
 typedef struct
