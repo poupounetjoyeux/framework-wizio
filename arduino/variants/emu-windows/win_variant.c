@@ -26,6 +26,7 @@
 #include <constants.h>
 
 HWND hWndMain = 0;
+HWND hEditValue = 0;
 LED_T leds[MAX_LEDS] = {0};
 ANA_T analogs[MAX_ANALOG] = {0};
 
