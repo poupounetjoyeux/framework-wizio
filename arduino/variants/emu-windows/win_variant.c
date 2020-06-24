@@ -27,6 +27,7 @@
 
 HWND hWndMain = 0;
 LED_T leds[MAX_LEDS] = {0};
+ANA_T analogs[MAX_ANALOG] = {0};
 
 int get_led_by_handle(HWND h)
 {
