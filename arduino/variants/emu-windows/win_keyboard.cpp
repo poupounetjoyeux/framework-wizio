@@ -29,6 +29,7 @@
 #include <commctrl.h>
 
 extern HWND hWndMain;
+extern HWND hEditValue;
 void emu_print(LPCTSTR newText);
 
 void keyDown(WPARAM wParam)
@@ -75,6 +76,16 @@ void keyDown(WPARAM wParam)
     case VK_F12:
         leds[12].state = 1;
         break;
+
+    case VK_A:
+        {
+          if(bSuccess)
+          {
+            analogs[0].value = newValue;
+          }
+          break;
+        }
+
     default:
         break;
     }
@@ -82,6 +93,9 @@ void keyDown(WPARAM wParam)
 
 void keyUp(WPARAM wParam)
 {
+  BOOL bSuccess;
+  int newValue=GetDlgItemInt(hEditValue,0,&bSuccess,true);
+
     //WM_KEYUP:
     switch (wParam)
     {
@@ -124,6 +138,39 @@ void keyUp(WPARAM wParam)
       case VK_F12:
           leds[12].state = 0;
           break;
+
+    case VK_A:
+        {
+          if(bSuccess)
+          {
+            analogs[0].value = newValue;
+          }
+          break;
+        }
+    case VK_A:
+        {
+          if(bSuccess)
+          {
+            analogs[0].value = newValue;
+          }
+          break;
+        }
+    case VK_A:
+        {
+          if(bSuccess)
+          {
+            analogs[0].value = newValue;
+          }
+          break;
+        }
+    case VK_A:
+        {
+          if(bSuccess)
+          {
+            analogs[0].value = newValue;
+          }
+          break;
+        }
     default:
         break;
     }
