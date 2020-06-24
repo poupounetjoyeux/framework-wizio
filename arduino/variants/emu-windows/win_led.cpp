@@ -23,6 +23,7 @@
 
 #include <interface.h>
 #include <variant.h>
+#include <constants.h>
 
 #include <commctrl.h>
 
