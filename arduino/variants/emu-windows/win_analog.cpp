@@ -25,7 +25,6 @@
 #include <variant.h>
 
 #include <commctrl.h>
-#include "InputBox/SG_InputBox.h"
 
 extern HWND hWndMain;
 
@@ -43,12 +42,6 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     PAINTSTRUCT ps = {0};
     switch (M)
     {
-    case WM_LBUTTONUP:
-      LPWSTR result = SG_InputBox::GetString(
-       L"Code Project Demo - by Michael Haephrati",
-       L"What is your name",
-       L"My name is Michael");
-    return 0;
     case WM_PAINT:
         return 0;
 
