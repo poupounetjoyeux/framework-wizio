@@ -45,10 +45,10 @@ LRESULT CALLBACK AnaProc(HWND H, UINT M, WPARAM wParam, LPARAM lParam)
     {
     case WM_LBUTTONUP:
       BOOL bSuccess;
-      int newValue=GetDlgItemInt(hEditValue,IDC_NUM_EDIT,&bSuccess,true);
+      int newValue=GetDlgItemInt(hEditValue,0,&bSuccess,true);
       if(bSuccess)
       {
-        n.value = newValue;
+        analogs[n].value = newValue;
       }
       return 0;
     case WM_PAINT:
