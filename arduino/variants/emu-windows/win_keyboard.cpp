@@ -36,21 +36,44 @@ void keyDown(WPARAM wParam)
     //WM_KEYDOWN:
     switch (wParam)
     {
-    case VK_LEFT:
+    case VK_ESC:
+      leds[0].state = 1;
+      break;
+    case VK_F1:
+        leds[1].state = 1;
+        break;
+    case VK_F2:
+        leds[2].state = 1;
+        break;
+    case VK_F3:
+        leds[3].state = 1;
+        break;
+    case VK_F4:
+        leds[4].state = 1;
+        break;
+    case VK_F5:
+        leds[5].state = 1;
+        break;
+    case VK_F6:
         leds[6].state = 1;
         break;
-    case VK_RIGHT:
+    case VK_F7:
         leds[7].state = 1;
         break;
-    case VK_UP:
+    case VK_F8:
         leds[8].state = 1;
         break;
-    case VK_DOWN:
+    case VK_F9:
         leds[9].state = 1;
         break;
-    case VK_F1:
+    case VK_F10:
         leds[10].state = 1;
-        //emu_print("+ ");
+        break;
+    case VK_F11:
+        leds[11].state = 1;
+        break;
+    case VK_F12:
+        leds[12].state = 1;
         break;
     default:
         break;
@@ -62,22 +85,45 @@ void keyUp(WPARAM wParam)
     //WM_KEYUP:
     switch (wParam)
     {
-    case VK_LEFT:
-        leds[6].state = 0;
-        break;
-    case VK_RIGHT:
-        leds[7].state = 0;
-        break;
-    case VK_UP:
-        leds[8].state = 0;
-        break;
-    case VK_DOWN:
-        leds[9].state = 1;
-        break;
-    case VK_F1:
-        leds[10].state = 0;
-        //emu_print("- ");
-        break;
+      case VK_ESC:
+      leds[0].state = 0;
+      break;
+      case VK_F1:
+          leds[1].state = 0;
+          break;
+      case VK_F2:
+          leds[2].state = 0;
+          break;
+      case VK_F3:
+          leds[3].state = 0;
+          break;
+      case VK_F4:
+          leds[4].state = 0;
+          break;
+      case VK_F5:
+          leds[5].state = 0;
+          break;
+      case VK_F6:
+          leds[6].state = 0;
+          break;
+      case VK_F7:
+          leds[7].state = 0;
+          break;
+      case VK_F8:
+          leds[8].state = 0;
+          break;
+      case VK_F9:
+          leds[9].state = 0;
+          break;
+      case VK_F10:
+          leds[10].state = 0;
+          break;
+      case VK_F11:
+          leds[11].state = 0;
+          break;
+      case VK_F12:
+          leds[12].state = 0;
+          break;
     default:
         break;
     }
